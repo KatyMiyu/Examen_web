@@ -8,3 +8,12 @@ class Navbar(models.Model):
     url_nav = models.CharField(max_length=100, blank=False, null=False)
     def __str__(self):
 	    return str(self.nom_nav)
+    
+class Autores(models.Model):
+    id_autor = models.AutoField(db_column="idAutor",primary_key=True)
+    nom_autor = models.CharField(max_length=50, blank=False, null=False)
+    nacionalidad_autor = models.CharField(max_length=100, blank=False, null=False)
+    def __str__(self):
+         return str(self.nom_autor)
+    
+
