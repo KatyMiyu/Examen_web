@@ -49,20 +49,37 @@
 
         <div class="row">
           <div class="col-lg-12">
+            <h2>Haz click en el siguiente botón para desplegar la lista de géneros literarios</h2>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <button type="button" class="btn btn-lg btn-block" style="background-color: #F29BB2; color: #326173;">Desplegar</button>            
+          </div>
+        </div>
+
+        <br>
+        <div class="row">
+          <div class="col-lg-12">
             <table class="table">
               <thead class="thead-dark">
                 <tr>
                   <th scope="col"></th>
                   <th scope="col">Género literario</th>
-                  <th scope="col">Descripción</th>
+                  <th scope="col">Descripcion</th>
                 </tr>
               </thead>
               <tbody>
+                {% for categoria in categorias %}
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
+                  <th scope="row">{{categoria.id_categoria}}</th>
+                  <td>{{categoria.nom_categoria}}</td>
+                  <td>{{categoria.desc_categoria}}</td>
                 </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>

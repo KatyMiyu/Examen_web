@@ -50,6 +50,21 @@
 
         <div class="row">
           <div class="col-lg-12">
+            <h2>Haz click en el siguiente botón para desplegar nuestra lista de autores</h2>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <button type="button" class="btn btn-lg btn-block" style="background-color: #F29BB2; color: #326173;">Desplegar</button>            
+          </div>
+        </div>
+
+        <br>
+        <div class="row">
+          <div class="col-lg-12">
             <table class="table">
               <thead class="thead-dark">
                 <tr>
@@ -59,11 +74,13 @@
                 </tr>
               </thead>
               <tbody>
+                {% for autor in autores %}
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
+                  <th scope="row">{{ autor.id_autor }}</th>
+                  <td>{{autor.nom_autor}}</td>
+                  <td>{{autor.nacionalidad_autor}}</td>
                 </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>
@@ -102,7 +119,10 @@
 
 
       </div>
-    
+
+      <!--Script para la funcion del botón-->
+      
+      
 
 
 
