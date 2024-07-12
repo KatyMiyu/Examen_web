@@ -55,14 +55,14 @@
 
         <div class="row">
           <div class="col-lg-12">
-            <button type="button" class="btn btn-lg btn-block" style="background-color: #326173; color: #F29BB2;">Desplegar</button>            
+            <button type="button" class="btn btn-lg btn-block" style="background-color: #326173; color: #F29BB2;" id="desplegar">Desplegar</button>            
           </div>
         </div>
         <br>
 
         <div class="row">
           <div class="col-lg-12">
-            <table class="table">
+            <table class="table hidden" id="tablaGeneros">
               <thead class="thead-dark">
                 <tr>
                   <th scope="col"></th>
@@ -72,11 +72,14 @@
                 </tr>
               </thead>
               <tbody>
+                {% for libro in libros %}
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
+                  <th scope="row">{{libro.id_libro}}</th>
+                  <td>{{libro.titulo_libro}}</td>
+                  <td>{{libro.anio_publicacion}}</td>
+                  <td>{{libro.desc_libro}}</td>
                 </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>
@@ -133,7 +136,17 @@
     <!--FontAwesome-->
     <script src="https://kit.fontawesome.com/146097cd5f.js" crossorigin="anonymous"></script>
 
-    <!--Scripts-->
+    
+    <!--Scripts tabla-->
+    <script>
+      $(document).ready(function () {
+          console.log('Iniciando ejecucion del código');
+          $('#desplegar').on('click', function () {
+              console.log('Ingresando al botón desplegar');
+              $('#tablaGeneros').toggleClass('hidden');
+          });
+      });
+  </script>
 
 
 </body>

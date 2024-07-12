@@ -34,3 +34,9 @@ h3{
 a{
     color: antiquewhite;
 }
+
+/*Para oculptar la tabla*/
+.hidden {
+    display: none;
+}
+
