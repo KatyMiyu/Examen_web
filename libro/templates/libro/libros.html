@@ -198,6 +198,24 @@
       });
     </script>
 
+    <!--Scrip para buscar los libros-->
+    <script src="http://localhost:8000/admin/libro/libros/">
+      document.getElementById('Libros').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const year = document.getElementById('year').value;
+    const text = document.getElementById('text').value;
+
+    const output = document.getElementById('output');
+    output.innerHTML = `
+        <h2>Información Ingresada:</h2>
+        <p><strong>Titulo:</strong> ${name}</p>
+        <p><strong>Año publicacion:</strong> ${year}</p>
+        <p><strong>Descripcion:</strong> ${text}</p>
+    `;
+    });
+  </script>
 
 </body>
 </html>
